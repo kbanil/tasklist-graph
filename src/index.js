@@ -1,0 +1,10 @@
+require('./index.css');
+require('jquery-ui-css/core.css');
+require('jquery-ui-css/menu.css');
+require('jquery-ui-css/dialog.css');
+require('jquery-ui-css/theme.css');
+import {TaskListGraph} from './task-list-graph';
+import * as helper from './helper';
+let mainflow = new TaskListGraph();
+helper.createGradients(mainflow.svg);
+helper.drawLegend();

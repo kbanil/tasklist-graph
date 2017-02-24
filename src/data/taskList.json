@@ -1,0 +1,202 @@
+[
+    {
+        "taskName": "Start",
+        "wfTaskId": "24613213ASDF834",
+        "predecessor": [],
+        "dependants": ["213213ASDF834","687678ABCE9877"],
+        "status": "Completed",
+        "role": "System",
+        "startDate": "01/01/2017 04:00:00 EST",
+        "endDate" : "01/01/2017 05:00:00 EST",
+        "completedBy" : "System"
+    },
+    {
+        "taskName": "Request Equipment Retrieval",
+        "wfTaskId": "213213ASDF834",
+        "predecessor": ["24613213ASDF834"],
+        "dependants": ["687698978ABCE9877","534524623ASDSADCC987"],
+        "status": "Completed",
+        "role": "Retrieval Specialist",
+        "startDate": "01/01/2017 04:00:00 EST",
+        "endDate" : "01/01/2017 05:00:00 EST",
+        "assignedTo" : "John Doe",
+        "completedBy" : "Jane Doe"
+    },
+    {
+        "taskName": "Initial RMA Reminder",
+        "wfTaskId": "687678ABCE9877",
+        "predecessor": ["24613213ASDF834"],
+        "dependants": ["687698978ABCE9877","534524623ASDSADCC987"],
+        "status": "Skipped",
+        "role": "Retrieval Specialist",
+        "endDate" : "01/01/2017 05:00:00 EST",
+        "completedBy" : "System"
+    },
+    {
+        "taskName": "Parts Retrieved Segment",
+        "wfTaskId": "687698978ABCE9877",
+        "predecessor": ["213213ASDF834","687678ABCE9877"],
+        "dependants": ["687698978AB234E9877"],
+        "children" : [
+            {
+                "taskName": "Start",
+                "wfTaskId": "2419A13ASDF834",
+                "predecessor": [],
+                "dependants": ["78637846ASDBB0"],
+                "status": "Completed",
+                "role": "System",
+                "startDate": "01/02/2017 04:00:00 EST",
+                "endDate" : "01/02/2017 05:00:00 EST",
+                "completedBy" : "System"
+            },
+            {
+                "taskName": "Send Retrieval List",
+                "wfTaskId": "78637846ASDBB0",
+                "predecessor" : ["2419A13ASDF834"],
+                "dependants" : ["8978964ADSBBC980"],
+                "status": "Completed",
+                "role": "Retrieval Specialist",
+                "startDate": "01/01/2017 04:00:00 EST",
+                "endDate" : "01/01/2017 05:00:00 EST",
+                "assignedTo" : "John Doe",
+                "completedBy" : "Jane Doe"
+            },
+            {
+                "taskName": "Wait for DiscoEOLExported",
+                "wfTaskId": "8978964ADSBBC980",
+                "predecessor": ["78637846ASDBB0"],
+                "dependants": ["12323ASDFBB3434","736487364ASDC83749"],
+                "status": "In Progress",
+                "role": "System",
+                "startDate": "01/01/2017 04:00:00 EST",
+                "assignedTo" : "John Doe"
+            },
+            {
+                "taskName": "Parts Equipment Retrieval",
+                "wfTaskId": "12323ASDFBB3434",
+                "predecessor": ["8978964ADSBBC980"],
+                "dependants": ["6873538978AB234E9877"],
+                "status": "Not Started",
+                "role": "Retrieval Specialist"
+            },
+            {
+                "taskName": "Wait for PartsRetrieved",
+                "wfTaskId": "736487364ASDC83749",
+                "predecessor": ["8978964ADSBBC980"],
+                "dependants": ["6873538978AB234E9877"],
+                "status": "Not Started",
+                "role": "System"
+            },
+            {
+                "taskName": "End",
+                "wfTaskId": "6873538978AB234E9877",
+                "predecessor": ["736487364ASDC83749","12323ASDFBB3434"],
+                "dependants": [],
+                "status": "Not Started",
+                "role": "System"
+            }
+        ]
+    },
+    {
+        "taskName": "RMA Reminder Email Segment",
+        "wfTaskId": "534524623ASDSADCC987",
+        "predecessor": ["213213ASDF834","687678ABCE9877"],
+        "dependants": ["687698978AB234E9877"],
+        "status": "In Progress",
+        "children": [
+            {
+                "taskName": "Start",
+                "wfTaskId": "2419A281813ASDF834",
+                "predecessor": [],
+                "dependants": ["37483746ASDF7879","37648159CDAFFS76","7673461ASDVCX7578"],
+                "status": "Completed",
+                "role": "System"
+            },
+            {
+                "taskName": "Wait for 20 Days",
+                "wfTaskId": "37483746ASDF7879",
+                "predecessor": ["2419A281813ASDF834"],
+                "dependants": ["76763746ASDNCGI55","243659ASDMMN656533"],
+                "status": "Completed",
+                "endDate" : "01/03/2017 05:00:00 EST",
+                "role": "System"
+            },
+            {
+                "taskName": "Wait for 40 Days",
+                "wfTaskId": "37648159CDAFFS76",
+                "predecessor": ["2419A281813ASDF834"],
+                "dependants": ["87384787ADS5454"],
+                "status": "In Progress",
+                "role": "System"
+            },
+            {
+                "taskName": "Wait for 60 Days",
+                "wfTaskId": "7673461ASDVCX7578",
+                "predecessor": ["2419A281813ASDF834"],
+                "dependants": ["2837483787ASDVV656"],
+                "status": "In Progress",
+                "role": "System"
+            },
+            {
+                "taskName": "Send First Reminder Email",
+                "wfTaskId": "76763746ASDNCGI55",
+                "predecessor": ["37483746ASDF7879"],
+                "dependants": ["1238787HAGDS8675"],
+                "status": "Errored",
+                "role" : "System"
+            },
+            {
+                "taskName": "Contact Customer for Unreturned Equipments",
+                "wfTaskId": "243659ASDMMN656533",
+                "predecessor": ["37483746ASDF7879"],
+                "dependants": ["1238787HAGDS8675"],
+                "status": "In Progress",
+                "role": "Retrieval Specialist",
+                "startDate": "01/01/2017 04:00:00 EST",
+                "assignedTo" : "John Doe"
+            },
+            {
+                "taskName": "Send Second Reminder Email",
+                "wfTaskId": "87384787ADS5454",
+                "predecessor": ["37648159CDAFFS76"],
+                "dependants": ["1238787HAGDS8675"],
+                "status": "Not Started"
+            },
+            {
+                "taskName": "Equipment Recovery Window Closed",
+                "wfTaskId": "2837483787ASDVV656",
+                "predecessor": ["7673461ASDVCX7578"],
+                "dependants": ["1238787HAGDS8675"],
+                "status": "Not Started"
+            },
+            {
+                "taskName": "Merge",
+                "wfTaskId": "1238787HAGDS8675",
+                "predecessor": ["76763746ASDNCGI55","243659ASDMMN656533"],
+                "dependants": ["989723787ASDHJ8787"],
+                "status": "Not Started"
+            },
+            {
+                "taskName": "End",
+                "wfTaskId": "989723787ASDHJ8787",
+                "predecessor": ["1238787HAGDS8675"],
+                "dependants": [],
+                "status": "Not Started"
+            }
+        ]
+    },
+    {
+        "taskName": "Merge",
+        "wfTaskId": "687698978AB234E9877",
+        "predecessor": ["687698978ABCE9877","534524623ASDSADCC987"],
+        "dependants": ["757237219ASDASD676"],
+        "status": "Not Started"
+    },
+     {
+        "taskName": "End",
+        "wfTaskId": "757237219ASDASD676",
+        "predecessor": ["687698978AB234E9877"],
+        "dependants": [],
+        "status": "Not Started"
+    }
+]

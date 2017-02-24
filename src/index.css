@@ -1,0 +1,151 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    font: 300 14px 'Helvetica Neue', Helvetica;
+}
+
+#chart {
+    background: rgba(251, 248, 193, 0.18);
+}
+
+#sub-chart {
+    background: rgba(251, 248, 193, 0.18);
+}
+
+#task-details {
+    background: rgba(251, 248, 193, 0.18);
+}
+
+#task-details td {
+    text-align: left;
+    padding: 0.4em;
+}
+
+#task-details td.property-name {
+    text-align: right;
+    font-weight: bold;
+}
+
+#legend {
+    float: right;
+    position: absolute;
+    top: 0;
+    right: 0
+}
+
+.hide {
+    display: none;
+}
+
+.task-nodes{
+    fill: url(#grad-default);
+    stroke: #333;
+    stroke-width: 0.3;
+    fill-opacity: 0.7;
+}
+
+.grad-default{
+    fill: url(#grad-default);
+}
+
+.grad-segment{
+    fill: url(#grad-segment);
+}
+
+.grad-skipped{
+    fill: url(#grad-skipped);
+}
+
+.grad-completed{
+    fill: url(#grad-completed);
+}
+
+.grad-not-started{
+    fill: url(#grad-not-started);
+}
+
+.grad-errored{
+    fill: url(#grad-errored);
+}
+
+.edgePath .path {
+  stroke: lightgray;
+  stroke-width: 7;
+  fill-opacity: 0.3;
+}
+
+.edgePath .innerPath {
+    stroke: #333;
+    stroke-width: 2;
+}
+
+.node .label text tspan{
+    font-size: 10px;
+    word-wrap: break-word;
+    fill: black;
+    font-weight: bold;
+}
+
+#grad-not-started .stop1 {
+    stop-color: rgba(226,226,226,1);
+}
+#grad-not-started .stop2 {
+    stop-color: rgba(219,219,219,1) ;
+}
+#grad-not-started .stop3 {
+    stop-color: rgba(209,209,209,1);
+}
+#grad-not-started .stop4 {
+    stop-color: rgba(254,254,254,1) ;
+}
+
+#grad-segment .stop4 {
+    stop-color: #6db3f2 ;
+}
+#grad-segment .stop3 {
+    stop-color: #54a3ee;
+}
+#grad-segment .stop2 {
+    stop-color: #3690f0;
+}
+#grad-segment .stop1 {
+    stop-color: #1e69de;
+}
+
+#grad-skipped .stop1 {
+    stop-color: #b5bdc8;
+}
+#grad-skipped .stop2 {
+    stop-color: #828c95;
+}
+#grad-skipped .stop3 {
+    stop-color: #28343b;
+}
+
+#grad-completed .stop1 {
+    stop-color: rgba(248,255,232,1);
+}
+#grad-completed .stop2 {
+    stop-color: rgba(227,245,171,1);
+}
+#grad-completed .stop3 {
+    stop-color: rgba(183,223,45,1) ;
+}
+
+#grad-errored .stop1 {
+    stop-color: rgba(254,187,187,1);
+}
+#grad-errored .stop2 {
+    stop-color: rgba(254,144,144,1);
+}
+#grad-errored .stop3 {
+    stop-color: rgba(255,92,92,1) ;
+}
+
+#grad-default .stop1 {
+    stop-color: rgba(222,239,255,1)
+}
+#grad-default .stop2 {
+    stop-color: rgba(152,190,222,1)
+}
+
